@@ -4,7 +4,7 @@
 [![Software License][ico-license]](LICENSE)
 [![Total Downloads][ico-downloads]][link-downloads]
 
-POA框架的中间件组件，使用PHP的Generator实现洋葱圈模型
+基于POA洋葱圈模型的中间件，定义Http服务器的处理逻辑
 
 ## 作者
 
