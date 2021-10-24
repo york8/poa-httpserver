@@ -1,0 +1,30 @@
+{
+  "name": "poa/httpserver",
+  "description": "基于POA洋葱圈模型的中间件，定义Http服务器的处理逻辑",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "poa",
+    "framework",
+    "generator",
+    "middleware"
+  ],
+  "authors": [
+    {
+      "name": "York",
+      "email": "lianyupeng1988@126.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Poa\\Http\\Server\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "poa/middleware": "~0.1.0",
+    "psr/log": "*",
+    "psr/http-message": "*"
+  }
+}
