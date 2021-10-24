@@ -1,4 +1,4 @@
-# poa-middleware
+# poa-httpserver
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE)
@@ -21,7 +21,13 @@ POA框架的中间件组件，使用PHP的Generator实现洋葱圈模型
 ```
 
 ```bash
-composer install
+composer update
+```
+
+或
+
+```bash
+composer install poa/httpserver
 ```
 
 ## 示例
