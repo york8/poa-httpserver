@@ -24,7 +24,7 @@ interface HttpServerInterface
     public function stop();
 
     /**
-     * 处理 HTTP 请求
+     * 将 HTTP 请求委托给中间件系统 $application 进行处理
      * @param MiddlewareSystemInterface $application HTTP 服务器接收完整的数据后将请求委托给中间件系统 $application 进行处理
      */
     public function delegateRequest(MiddlewareSystemInterface $application);

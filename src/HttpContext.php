@@ -16,6 +16,9 @@ use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
+/**
+ * 基于中间件上下文接口实现的 HTTP 服务器的 请求处理上下文
+ */
 class HttpContext implements ContextInterface, LoggerAwareInterface
 {
     use ContextTrait;
@@ -24,6 +27,9 @@ class HttpContext implements ContextInterface, LoggerAwareInterface
     public ServerRequestInterface $request;
     /** @var ResponseInterface */
     public ResponseInterface $response;
+
+    /** @var LoggerInterface 日志处理对象 */
+    public LoggerInterface $logger;
 
     public function __construct(ServerRequestInterface $request, ResponseInterface $response)
     {
@@ -48,6 +54,15 @@ class HttpContext implements ContextInterface, LoggerAwareInterface
     public function getPort(): ?int
     {
         return $this->request->getUri()->getPort();
+    }
+
+    /**
+     * 获取请求的 HTTP 方法
+     * @return string
+     */
+    public function getMethod(): string
+    {
+        return $this->request->getMethod();
     }
 
     /**
@@ -173,8 +188,19 @@ class HttpContext implements ContextInterface, LoggerAwareInterface
         return $this;
     }
 
+    /**
+     * @return LoggerInterface
+     */
     public function getLogger(): LoggerInterface
     {
         return $this->logger;
+    }
+
+    /**
+     * @param LoggerInterface $logger
+     */
+    public function setLogger(LoggerInterface $logger): void
+    {
+        $this->logger = $logger;
     }
 }
